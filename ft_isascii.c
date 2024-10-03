@@ -6,12 +6,13 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:03:43 by adoireau          #+#    #+#             */
-/*   Updated: 2024/09/30 17:52:07 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:32:17 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
+/* Checks if c is an ASCII character (0-127). */
 int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);

@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:03:57 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:32:07 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/03 13:43:44 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/03 17:51:28 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
-/* Checks if character c is alphabetic. */
-int	ft_isalpha(int c)
+/* Finds last occurrence of c in string s. */
+char	*ft_strrchr(const char *s, int c)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i--;
+	}
+	return (NULL);
 }

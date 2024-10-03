@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:03:57 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:32:07 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/03 14:41:56 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/03 17:37:05 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
-/* Checks if character c is alphabetic. */
-int	ft_isalpha(int c)
+/* Appends src to dst of size dsize; returns total length. */
+size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	size_t	i;
+	size_t	j;
+	size_t	len_dst;
+	size_t	len_src;
+
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
+	i = len_dst;
+	j = 0;
+	if (dsize <= len_dst)
+		return (dsize + len_src);
+	while (src[j] && (i < dsize - 1))
+		dst[i++] = src[j++];
+	dst[i] = '\0';
+	return (len_dst + len_src);
 }

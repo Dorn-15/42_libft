@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:03:57 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:32:07 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/03 16:23:06 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/03 17:37:30 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
-/* Checks if character c is alphabetic. */
-int	ft_isalpha(int c)
+/* Copies src to dst of size dsize; returns length of src. */
+size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	size_t	i;
+	size_t	len_src;
+
+	i = 0;
+	len_src = ft_strlen(src);
+	if (dsize != 0)
+	{
+		while (src[i] && i + 1 < dsize)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (len_src);
 }

@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:03:57 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:32:07 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/03 13:14:01 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/03 17:34:54 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
-/* Checks if character c is alphabetic. */
-int	ft_isalpha(int c)
+/* Searches for c in first n bytes of memory area s. */
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	size_t			i;
+	unsigned char	*p;
+
+	i = 0;
+	p = (unsigned char *)s;
+	while (i < n)
+	{
+		if (p[i] == (unsigned char)c)
+			return ((void *)p + i);
+		i++;
+	}
+	return (NULL);
 }

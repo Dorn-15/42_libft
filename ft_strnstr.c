@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 17:14:31 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:37:07 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/03 17:03:58 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/03 17:37:58 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
-/* Fills n bytes of memory at dest with byte value c. */
-void	*ft_memset(void *dest, int c, size_t n)
+/* Searches for substring srch in ref within n characters. */
+char	*ft_strnstr(const char *ref, const char *srch, size_t n)
 {
-	size_t			i;
-	unsigned char	*bytes;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	bytes = (unsigned char *)dest;
-	while (i < n)
+	if (srch[i] == '\0')
+		return ((char *) ref);
+	while (ref[i] && i < n)
 	{
-		bytes[i] = (unsigned char)c;
+		if (ref[i] == srch[0])
+		{
+			j = 0;
+			while (ref[i + j] && srch[j]
+				&& ref[i + j] == srch[j]
+				&& (i + j) < n)
+				j++;
+			if (srch[j] == '\0')
+				return ((char *)ref + i);
+		}
 		i++;
 	}
-	return (dest);
+	return (NULL);
 }

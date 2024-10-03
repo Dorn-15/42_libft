@@ -6,17 +6,18 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:49:01 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/01 18:21:51 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/03 17:39:23 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/libft.h"
 
+/* Copies n bytes from src to dest; handles overlapping regions. */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
 
 	if (!dest || !src)
 		return (NULL);
