@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:34:14 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:37:06 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:22:21 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Finds first occurrence of c in string s. */
 char	*ft_strchr(const char *s, int c)

@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:47:00 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:35:04 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:22:37 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Copies n bytes from memory area src to dest. */
 void	*ft_memcpy(void *dest, const void *src, size_t n)

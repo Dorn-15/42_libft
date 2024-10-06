@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:23:06 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:37:30 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:22:04 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Copies src to dst of size dsize; returns length of src. */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)

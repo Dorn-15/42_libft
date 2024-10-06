@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:03:57 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:32:07 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:23:01 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Checks if character c is alphabetic. */
 int	ft_isalpha(int c)

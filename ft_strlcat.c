@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:41:56 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:37:05 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:22:08 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Appends src to dst of size dsize; returns total length. */
 size_t	ft_strlcat(char *dst, const char *src, size_t dsize)

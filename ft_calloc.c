@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 17:43:29 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/06 16:23:47 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/04 12:47:16 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/06 16:23:09 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Converts lowercase character c to uppercase. */
-int	ft_toupper(int c)
+/* alloc memory & sets all bytes to zero. */
+void	*ft_calloc(size_t count, size_t size)
 {
-	if (c >= 'a' && c <= 'z')
-		c -= 32;
-	return (c);
+	size_t	total;
+	void	*mem;
+
+	if (size != 0 && count > ((size_t) -1 / size))
+		return (NULL);
+	total = count * size;
+	mem = malloc(total);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, total);
+	return (mem);
 }

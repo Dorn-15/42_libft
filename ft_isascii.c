@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:03:43 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:32:17 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:22:56 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Checks if c is an ASCII character (0-127). */
 int	ft_isascii(int c)

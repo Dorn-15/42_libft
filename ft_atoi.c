@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:06:15 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:30:58 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:23:17 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Converts a string to an integer. */
 int	ft_atoi(const char *str)

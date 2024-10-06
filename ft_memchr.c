@@ -6,11 +6,11 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:14:01 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/03 17:34:54 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/06 16:22:45 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/libft.h"
+#include "libft.h"
 
 /* Searches for c in first n bytes of memory area s. */
 void	*ft_memchr(const void *s, int c, size_t n)
