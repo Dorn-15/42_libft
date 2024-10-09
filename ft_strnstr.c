@@ -6,7 +6,7 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:03:58 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/06 16:21:51 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/07 23:16:55 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ char	*ft_strnstr(const char *ref, const char *srch, size_t n)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	if (srch[i] == '\0')
+	if (!ref && n == 0)
+		return (NULL);
+	if (ft_strlen(srch) == 0)
 		return ((char *) ref);
+	i = 0;
 	while (ref[i] && i < n)
 	{
 		if (ref[i] == srch[0])

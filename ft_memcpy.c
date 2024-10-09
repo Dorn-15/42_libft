@@ -6,7 +6,7 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:47:00 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/06 16:22:37 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/07 22:37:16 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;

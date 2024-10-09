@@ -6,12 +6,13 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:28:51 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/06 16:21:32 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/09 12:32:30 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Extracts a substring from 's' starting at 'start' with a length of 'len'. */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*s2;

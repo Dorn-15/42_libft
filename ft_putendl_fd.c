@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:07:09 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/09 12:47:49 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/09 13:17:39 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/09 13:18:52 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Returns the length of the string 's'. */
-size_t	ft_strlen(const char *s)
+void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (!s)
+		return ;
+	i = ft_strlen(s);
+	write(fd, s, i);
+	write(fd, "\n", 1);
 }

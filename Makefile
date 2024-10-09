@@ -1,39 +1,39 @@
+NAME = libft.a
+
 SRCS_DIR = .
 SRCS = $(wildcard $(SRCS_DIR)/ft_*.c)
 OBJS = $(SRCS:.c=.o)
 
-SRCS_SHARED = $(wildcard $(SRCS_DIR)/ft_*.c)
-OBJS_SHARED = $(SRCS_SHARED:.c=.so.o)
-
 HEADERS = libft.h
-LIB = libft.a
 
-CFLAGS = -Wall -Wextra -Werror -I $(SRCS_DIR) -fPIC
+CFLAGS = -Wall -Wextra -Werror -fPIC -I $(SRCS_DIR)
 CC = gcc
 
 AR = ar rcs
+RM = rm -f
 
-all: $(LIB)
+# Compilation de la lib statique
+all: $(NAME)
 
-$(LIB): $(OBJS)
+$(NAME): $(OBJS)
 	$(AR) $@ $^
 
 %.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-%.so.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
+# Compilation de la lib dynamique
+so: $(OBJS)
+	$(CC) -shared -o libft.so $(OBJS)
 
+# Nettoyage des fichiers objets
 clean:
-	rm -f $(OBJS) $(OBJS_SHARED)
+	$(RM) $(OBJS)
 
+# Nettoyage complet (fichiers objets + librairie statique/dynamique)
 fclean: clean
-	rm -f $(LIB) libft.so
+	$(RM) $(NAME) libft.so
 
+# Recompilation complète
 re: fclean all
 
-so: $(OBJS_SHARED)
-	$(CC) -shared -o libft.so $(OBJS_SHARED)
-
 .PHONY: all clean fclean re so
-

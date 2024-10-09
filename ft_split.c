@@ -6,12 +6,13 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 14:22:55 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/06 16:22:25 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/09 12:51:01 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Splits the string 's' into words separated by the delimiter 'c' */
 static size_t	count_words(char const *s, char c)
 {
 	size_t	i;
@@ -50,7 +51,7 @@ char	*allocate_word(const char *s, size_t start, size_t end)
 	char	*word;
 	size_t	i;
 
-	word = (char *)malloc(sizeof(char) * (end - start + 1));
+	word = malloc((end - start + 1) * sizeof(char));
 	if (!word)
 		return (NULL);
 	i = 0;
@@ -101,7 +102,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	tab = (char **)malloc(sizeof(char *) * (words + 1));
+	tab = malloc(sizeof(char *) * (words + 1));
 	if (!tab)
 		return (NULL);
 	if (!allocate_tab(s, c, tab))
