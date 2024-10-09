@@ -6,12 +6,13 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:11:34 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/09 13:19:00 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:29:17 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Outputs the string s to the file descriptor fd. */
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;

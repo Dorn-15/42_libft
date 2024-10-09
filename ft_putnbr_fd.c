@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 13:17:39 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/09 15:28:59 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/09 14:58:09 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/09 15:24:39 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Outputs the string s followed by a newline to the file descriptor fd. */
-void	ft_putendl_fd(char *s, int fd)
+/* Outputs the integer n to the file descriptor fd. */
+void	ft_print_nb(long nb, int fd)
 {
-	size_t	i;
+	if (nb / 10)
+		ft_print_nb(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
+}
 
-	if (!s)
-		return ;
-	i = ft_strlen(s);
-	write(fd, s, i);
-	write(fd, "\n", 1);
+void	ft_putnbr_fd(int n, int fd)
+{
+	long	nb;
+
+	nb = (long)n;
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = -nb;
+	}
+	ft_print_nb(nb, fd);
 }
