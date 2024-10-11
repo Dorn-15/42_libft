@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:03:43 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/11 11:55:51 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/10 17:45:22 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/10 18:21:34 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Checks if c is an ASCII character (0-127). */
-int	ft_isascii(int c)
+t_list	*ft_lstnew(void *content)
 {
-	return (c >= 0 && c <= 127);
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

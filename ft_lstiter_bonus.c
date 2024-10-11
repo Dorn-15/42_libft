@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:03:43 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/11 11:55:51 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/10 19:27:55 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/10 19:28:33 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Checks if c is an ASCII character (0-127). */
-int	ft_isascii(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	return (c >= 0 && c <= 127);
+	while (lst && f)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

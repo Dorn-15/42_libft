@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 15:03:43 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/11 11:55:51 by adoireau         ###   ########.fr       */
+/*   Created: 2024/10/10 19:40:26 by adoireau          #+#    #+#             */
+/*   Updated: 2024/10/10 19:48:30 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* Checks if c is an ASCII character (0-127). */
-int	ft_isascii(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	return (c >= 0 && c <= 127);
+	t_list	*new_list;
+	t_list	*node;
+
+	new_list = NULL;
+	while (lst)
+	{
+		node = ft_lstnew(f(lst->content));
+		if (!node)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, node);
+		lst = lst->next;
+	}
+	return (new_list);
 }
