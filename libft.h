@@ -6,7 +6,7 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:04:49 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/10 19:42:39 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/18 14:05:41 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *dest, int c, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_print_nb(long nb, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);

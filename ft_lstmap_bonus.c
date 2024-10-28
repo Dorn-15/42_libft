@@ -6,12 +6,13 @@
 /*   By: adoireau <adoireau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 19:40:26 by adoireau          #+#    #+#             */
-/*   Updated: 2024/10/10 19:48:30 by adoireau         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:54:05 by adoireau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* Creates a new list by applying function f to all elements of the original list */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
