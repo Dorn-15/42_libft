@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/* Creates a new list by applying function f to all elements of the original list */
+/* Creates a new list by applying function to elements of the original list */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
